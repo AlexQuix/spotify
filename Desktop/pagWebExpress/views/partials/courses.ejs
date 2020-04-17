@@ -1,0 +1,15 @@
+
+    <link rel="stylesheet" href="/css/courses.css">
+    
+<section id="curso">
+    <header><h1>Cursos</h1></header>
+    <article id="curs">
+        <% for(array of cursos){ %> 
+            <a href="<%= array[3] %>">
+                <img src="/img/<%= array[0] %>">
+                <p><%= array[1] %></p>
+                <p><%= array[2] %>%<img src="/img/like.svg"></p>
+            </a>
+        <% } %>
+    </article>
+</section>

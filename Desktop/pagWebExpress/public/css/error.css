@@ -1,0 +1,19 @@
+#error{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#error > header{
+    max-height: 130px;
+    font: bold 40px tahoma;
+}
+#error > img{
+    width: 200px;
+}
+#error > p{
+    font: normal 20px tahoma;
+}

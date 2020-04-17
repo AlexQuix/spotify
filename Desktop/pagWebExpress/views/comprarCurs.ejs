@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/comprarCurs.css">
+</head>
+<body>
+    <%- include("partials/nav") %> 
+    <section id="compCurs">
+            <img src="/img/<%= cursos[2] %>">
+            <article>
+                <h1><%= cursos[0] %></h1>
+                <p>En este curso te enseñaremos desde un nivel basico hasta un nivel avanzado, <%= cursos[1] %>.</p>
+                <span>Precio: $<%= cursos[3] %></span>
+            </article>
+            <form action="/thanks" method="POST">
+                <input type="text" placeholder="Nombre" required>
+                <input type="password" name="" placeholder="Contraseña" required>
+                <input type="submit" value="Comprar" id="comp">
+            </form>
+    </section>
+</body>
+</html>
