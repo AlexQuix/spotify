@@ -1,0 +1,76 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#usuario{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: rgb(255, 227, 67);
+    display: grid;
+    place-items: center;
+}
+#usuario article{
+    width: 350px;
+    height: 400px;
+    position: relative;
+    transition: 0.5s;
+}
+#usuario article::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    filter: url("#wavy");
+    background: white;
+}
+#usuario article::after{
+    content: "";
+    width: 100%;
+    height: 180px;
+    border-bottom: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    filter: url("#wavy");
+    background: rgba(117, 117, 117, 0.171);
+}
+#usuario > article > div{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#usuario > article > div svg{
+    width: 80px;
+    fill: #000;
+    position: absolute;
+    z-index: 300;
+}
+#usuario > article > form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+#usuario > article > form input{
+    font-size: 20px;
+    padding: 5px;
+    margin: 15px;
+}
+#usuario > article > form #submit{
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px 0px;
+}

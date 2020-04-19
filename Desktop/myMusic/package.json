@@ -1,0 +1,17 @@
+{
+  "name": "spotify",
+  "version": "1.0.0",
+  "description": "\"lista de mis canciones favoritas\"",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon main",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "\"AlexQuix\"",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1"
+  }
+}
