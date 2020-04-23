@@ -3,13 +3,22 @@ const
     express = require("express"),
     app = express();
 
-app.set("view engine", "ejs")
+app.use(express.urlencoded({extended: false})); 
+app.use(express.json());
+
+app.set("view engine", "ejs");
 
 app.use(express.static("public"));
 
+//Agregando rutas
 app.get("/", (req, res)=>{
-    router.routerEJS(res, "index")
+    router.routerEJS(res, "index");
 });
+app.get("/home", (req, res)=>{
+    router.routerEJS(res, "home");
+});
+//Manejando errores
+app.use(router.errorPag);
 
 app.listen(3000);
 

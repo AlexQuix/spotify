@@ -1,0 +1,232 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+/*---------Usuario------*/
+#user{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0px;
+    margin: 0px;
+    z-index: 400;
+}
+#user > header{
+    font: bold 18px tahoma;
+    padding: 10px 40px;
+    padding-right: 150px;
+    color: #fff;
+    background: rgb(43, 163, 103);
+    clip-path: polygon(100% 0%, 80% 100%, 0% 100%, 0% 0%);
+}
+#user > div{
+    cursor: pointer;
+    margin-right: 40px;
+}
+#user > div > svg{
+    width: 30px;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 50%;
+    background: rgb(24, 224, 136);
+    fill: #fff;
+}
+/*---------Agregar un video------*/
+#formVideo{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    position: absolute;
+    z-index: 350;
+    visibility: hidden;
+}
+#formVideo > article{
+    width: 320px;
+    height: 350px;
+    padding: 20px;
+    background: #fff;
+}
+#formVideo > article > header{
+    width: 100%;
+    padding: 20px 0px;
+    padding-bottom: 60px;
+    font: bold 30px tahoma;
+    text-align: center;
+}
+#formVideo > article > form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#formVideo > article > form input{
+    font-size: 20px;
+    margin: 8px 0px;
+    padding: 5px;
+}
+#formVideo > article > form > #inputFile{
+    margin-bottom: 20px;
+    margin-left: 250px;
+}
+#formVideo > article > form > #btnAddFV{
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px 30px;
+    color: #fff;
+    background: rgb(43, 163, 103);
+    border: none;
+}
+
+
+/*---------Pantalla para mostrar el video------*/
+#ver-video{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: #000;
+}
+#ver-video > article > video{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+#ver-video > video{
+    width: 100%;
+}
+
+
+
+
+
+
+
+/*---------Lista de videos------*/
+#list{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+#list > header{
+    width: 100%;
+    height: 70px;
+    font:bold 30px tahoma;
+    text-align: center;
+    margin-top: 60px;
+}
+/*#list > #listurl{
+    width: 100%;
+    padding: 20px 0px;
+    margin-top: 50px;
+    position: relative;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}*/
+/*--------LISTA DE VIDEOS DESCARGADOS*/
+#list > #listfile{
+    position: relative;
+    width: 960px;
+    margin: 0px auto;
+    margin-top: 20px;
+}
+#list > #listfile div{
+    display: inline-block;
+    position: relative;
+    width: 230px;
+    height: 170px;
+    margin: 5px;
+    transition: 0.7s;
+    overflow: hidden;
+}
+/*---------------PLAY*/
+#list > #listfile div > .play{
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 70px;
+    width: 60px;
+    padding: 15px;
+    transition: 0.5s;
+    z-index: 500;
+}
+#list > #listfile div > .play > svg{
+    width: 100%;
+    fill: transparent;
+    transition: 0.5s;
+    position: relative;
+    z-index: -5;
+}
+#list > #listfile div:hover > .play > svg{
+    fill: rgba(128, 128, 128, 0.589);
+}
+#list > #listfile div > img{
+    width: 100%;
+    height: 132px;
+}
+/*------BOTON CLEAR ------*/
+#list > #listfile div > button{
+    cursor: pointer;
+    padding: 5px;
+    border: none;
+    position: absolute;
+    top: 5px;
+    left: -50px;
+    background: transparent;
+    transition: 0.5s;
+    z-index: 800;
+}
+#list > #listfile div > button > svg{
+    width: 20px;
+    fill: rgb(47, 47, 47);
+    position: relative;
+    z-index: -5;
+}
+#list > #listfile div > button:hover > svg{
+    fill: red;
+}
+/*------TITULO------*/
+#list > #listfile div > p{
+    display: inline-block;
+    width: 100%;
+    padding: 8px;
+    font: normal 18px tahoma;
+    text-align: left;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 200;
+}
+/*------BOTON EDITAR ------*/
+#list > #listfile div > p > button{
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 0px;
+    right: -50px;
+    transition: 0.5s;
+    z-index: 800;
+}
+#list > #listfile div > p svg{
+    width: 25px;
+    fill: black;
+    transition: 0.5s;
+    position: relative;
+    z-index: -5;
+}
+#list > #listfile div > p > button:hover > svg{
+    fill: white;
+}
+
+#list > #listfile div:hover > button{
+    left: 5px;
+}
+#list > #listfile div:hover > p > button{
+    right: 15px;
+}
+#list > #listfile div:hover{
+    box-shadow: 1px 1px 5px black;
+    background: rgb(37, 207, 122);
+}
