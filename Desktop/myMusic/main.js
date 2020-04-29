@@ -23,6 +23,7 @@ app.post("/home", (req, res)=>{
 //Manejando errores
 app.use(router.errorPag);
 
-app.listen(3000);
+app.set("port", process.env.PORT || 3000);
+app.listen(app.get("port"));
 
 console.log("Servidor listo");
