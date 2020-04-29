@@ -15,7 +15,10 @@ app.get("/", (req, res)=>{
     router.routerEJS(res, "index");
 });
 app.get("/home", (req, res)=>{
-    router.routerEJS(res, "home");
+    router.routerEJS(res, "home", {usuario: "usuario"});
+});
+app.post("/home", (req, res)=>{
+    router.routerEJS(res, "home", {usuario: req.body.nombre});
 });
 //Manejando errores
 app.use(router.errorPag);

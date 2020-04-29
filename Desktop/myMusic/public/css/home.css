@@ -1,3 +1,11 @@
+
+:root{
+    --color-blanco: #fff;
+    --color-tem-oscuro: #BF2264;
+    --color-tem-claro: #E62978;
+    --color-cont-oscuro: #FF781F;
+    --color-cont-claro: #FF9012;
+}
 *{
     padding: 0px;
     margin: 0px;
@@ -16,8 +24,8 @@
     font: bold 18px tahoma;
     padding: 10px 40px;
     padding-right: 150px;
-    color: #fff;
-    background: rgb(43, 163, 103);
+    color: var(--color-blanco);
+    background: var(--color-tem-oscuro);
     clip-path: polygon(100% 0%, 80% 100%, 0% 100%, 0% 0%);
 }
 #user > div{
@@ -29,9 +37,23 @@
     margin-top: 5px;
     padding: 10px;
     border-radius: 50%;
-    background: rgb(24, 224, 136);
-    fill: #fff;
+    background: var(--color-tem-oscuro);
+    fill: var(--color-blanco);
+    transition: 0.5s;
 }
+#user > div:hover > svg{
+    background: none;
+    fill: var(--color-cont-oscuro);
+}
+
+
+
+
+
+
+
+
+
 /*---------Agregar un video------*/
 #formVideo{
     width: 100%;
@@ -41,25 +63,32 @@
     position: absolute;
     z-index: 350;
     visibility: hidden;
+    overflow: hidden;
 }
 #formVideo > article{
     width: 320px;
-    height: 350px;
-    padding: 20px;
-    background: #fff;
+    height: 360px;
+    background: var(--color-blanco);
+    border-radius: 20px;
 }
 #formVideo > article > header{
     width: 100%;
-    padding: 20px 0px;
-    padding-bottom: 60px;
-    font: bold 30px tahoma;
+    height: 120px;
+    font: bold 28px tahoma;
     text-align: center;
+    color: var(--color-blanco);
+    background: linear-gradient(270deg, var(--color-tem-claro), var(--color-tem-oscuro));
+    display: grid;
+    place-content: center;
+    border-radius: 20px 0px;
+    filter: brightness(0.9);
 }
 #formVideo > article > form{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 30px;
 }
 #formVideo > article > form input{
     font-size: 20px;
@@ -71,13 +100,23 @@
     margin-left: 250px;
 }
 #formVideo > article > form > #btnAddFV{
-    font-size: 20px;
+    font: normal 20px tahoma;
     cursor: pointer;
     padding: 10px 30px;
-    color: #fff;
-    background: rgb(43, 163, 103);
+    color: var(--color-blanco);
+    background: linear-gradient(270deg, var(--color-tem-claro), var(--color-tem-oscuro));
     border: none;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.5s;
 }
+#formVideo > article > form > #btnAddFV:hover{
+    color: #000;
+    background: linear-gradient(270deg, var(--color-tem-oscuro), var(--color-tem-claro));
+}
+
+
+
 
 
 /*---------Pantalla para mostrar el video------*/
@@ -87,7 +126,8 @@
     position: relative;
     background: #000;
 }
-#ver-video > article > video{
+#ver-video > article > video,
+#ver-video > article > iframe{
     position: relative;
     width: 100%;
     height: 100vh;
@@ -113,24 +153,26 @@
     height: 70px;
     font:bold 30px tahoma;
     text-align: center;
-    margin-top: 60px;
+    margin: 60px 0px;
+    color: var(--color-tem-oscuro);
 }
-/*#list > #listurl{
+#list section{
     width: 100%;
-    padding: 20px 0px;
-    margin-top: 50px;
     position: relative;
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
-}*/
-/*--------LISTA DE VIDEOS DESCARGADOS*/
-#list > #listfile{
-    position: relative;
-    width: 960px;
-    margin: 0px auto;
-    margin-top: 20px;
 }
-#list > #listfile div{
+#list > #sectionID{
+    background: rgb(233, 233, 233);
+}
+
+/*--------LISTA DE VIDEOS DESCARGADOS*/
+#list section > #listfile, 
+#list section > #listurl{
+    position: relative;
+    width: 972px;
+    margin: 0px auto;
+    padding: 20px 0px;
+}
+#list div{
     display: inline-block;
     position: relative;
     width: 230px;
@@ -140,7 +182,7 @@
     overflow: hidden;
 }
 /*---------------PLAY*/
-#list > #listfile div > .play{
+#list div > .play{
     cursor: pointer;
     position: absolute;
     top: 15px;
@@ -150,22 +192,22 @@
     transition: 0.5s;
     z-index: 500;
 }
-#list > #listfile div > .play > svg{
+#list div > .play > svg{
     width: 100%;
     fill: transparent;
     transition: 0.5s;
     position: relative;
     z-index: -5;
 }
-#list > #listfile div:hover > .play > svg{
-    fill: rgba(128, 128, 128, 0.589);
+#list div:hover > .play > svg{
+    fill: rgba(255, 144, 18, 0.582)
 }
-#list > #listfile div > img{
+#list div > img{
     width: 100%;
     height: 132px;
 }
 /*------BOTON CLEAR ------*/
-#list > #listfile div > button{
+#list div > button{
     cursor: pointer;
     padding: 5px;
     border: none;
@@ -176,17 +218,17 @@
     transition: 0.5s;
     z-index: 800;
 }
-#list > #listfile div > button > svg{
+#list div > button > svg{
     width: 20px;
     fill: rgb(47, 47, 47);
     position: relative;
     z-index: -5;
 }
-#list > #listfile div > button:hover > svg{
+#list div > button:hover > svg{
     fill: red;
 }
 /*------TITULO------*/
-#list > #listfile div > p{
+#list div > p{
     display: inline-block;
     width: 100%;
     padding: 8px;
@@ -196,9 +238,10 @@
     bottom: 0px;
     left: 0px;
     z-index: 200;
+    transition: 0.5s;
 }
 /*------BOTON EDITAR ------*/
-#list > #listfile div > p > button{
+#list div > p > button{
     cursor: pointer;
     padding: 5px 10px;
     border: none;
@@ -209,24 +252,32 @@
     transition: 0.5s;
     z-index: 800;
 }
-#list > #listfile div > p svg{
+#list div > p svg{
     width: 25px;
-    fill: black;
+    fill: rgb(128, 0, 62);
     transition: 0.5s;
     position: relative;
     z-index: -5;
 }
-#list > #listfile div > p > button:hover > svg{
-    fill: white;
+#list div > p > button:hover > svg{
+    fill: var(--color-blanco);
 }
-
-#list > #listfile div:hover > button{
+#list div:hover p{
+    color: white;
+}
+#list div:hover > button{
     left: 5px;
 }
-#list > #listfile div:hover > p > button{
+#list div:hover > p > button{
     right: 15px;
 }
-#list > #listfile div:hover{
+#list div:hover{
     box-shadow: 1px 1px 5px black;
-    background: rgb(37, 207, 122);
+    background: rgb(251, 92, 111);
 }
+
+/*
+rojo: 251, 92, 111
+celeste: 73, 163, 248
+morado: 128, 103, 255
+*/

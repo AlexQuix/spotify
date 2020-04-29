@@ -1,5 +1,4 @@
 exports.routerEJS = (res, file, object)=>{
-    console.log(object)
     res.render(file, object);
 }
 
